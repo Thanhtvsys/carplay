@@ -346,6 +346,7 @@ extern "C" {
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CarPlay;
 @import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
@@ -378,6 +379,15 @@ SWIFT_CLASS("_TtC13CarPlayKova3D11AppDelegate")
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic, strong) UIWindow * _Nullable window;
 - (BOOL)application:(UIApplication * _Nonnull)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class CPTemplateApplicationScene;
+@class CPInterfaceController;
+SWIFT_CLASS("_TtC13CarPlayKova3D20CarPlaySceneDelegate")
+@interface CarPlaySceneDelegate : UIResponder <CPTemplateApplicationSceneDelegate>
+- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)templateApplicationScene didConnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController;
+- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)templateApplicationScene didDisconnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
