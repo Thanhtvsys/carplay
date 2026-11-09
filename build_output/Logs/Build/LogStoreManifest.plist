@@ -6,48 +6,6 @@
 	<integer>12</integer>
 	<key>logs</key>
 	<dict>
-		<key>A6F950ED-223E-41C8-B9D2-1BAD3BB9CB34</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>A6F950ED-223E-41C8-B9D2-1BAD3BB9CB34.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>0</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>CarPlayKova3D project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>CarPlayKova3D</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building project CarPlayKova3D with scheme CarPlayKova3D and configuration Release</string>
-			<key>timeStartedRecording</key>
-			<real>815904475.17426896</real>
-			<key>timeStoppedRecording</key>
-			<real>815904478.23905599</real>
-			<key>title</key>
-			<string>Building project CarPlayKova3D with scheme CarPlayKova3D and configuration Release</string>
-			<key>uniqueIdentifier</key>
-			<string>A6F950ED-223E-41C8-B9D2-1BAD3BB9CB34</string>
-		</dict>
 		<key>A79BC422-864A-4428-8549-0079489B5C4C</key>
 		<dict>
 			<key>className</key>
