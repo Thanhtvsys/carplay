@@ -1,43 +1,38 @@
 #!/bin/bash
 
-# Cấu hình dự án và đường dẫn GitHub repository của bạn
+# Cấu hình dự án và đường dẫn GitHub repository
 VERSION_FILE="version.txt"
 PROJECT_NAME="CarPlayKova3D"
 GITHUB_REPO_URL="https://github.com/Thanhtvsys/carplay.git"
 PAGES_URL="https://thanhtvsys.github.io/carplay/"
 
-echo "🚀 Bắt đầu quy trình tự động Build và Versioning cho $PROJECT_NAME..."
+echo "🚀 Bắt đầu quy trình tự động Build, cập nhật phiên bản mới nhất và dọn dẹp file cũ..."
 
-# 1. Kiểm tra và khởi tạo Git repository nếu chưa có
-if [ ! -d ".git" ]; then
-    echo "📦 Đang khởi tạo Git repository..."
-    git init
-    git remote add origin "$GITHUB_REPO_URL"
-else
-    # Đảm bảo remote URL luôn trỏ chính xác đến repo của bạn
-    git remote set-url origin "$GITHUB_REPO_URL"
-fi
+# 1. Dọn dẹp triệt để các tệp tạm, cache hoặc bản build cũ nếu có
+rm -rf build/ DerivedData/ *.zip *.tar.gz 2>/dev/null
+echo "🧹 Đã xóa bỏ các tệp build tạm và rác hệ thống cũ."
 
-# 2. Quản lý số phiên bản tự động bắt đầu từ 1.1.0
+# 2. Quản lý phiên bản: Ghi đè phiên bản cũ, chỉ giữ lại version mới nhất
 if [ ! -f "$VERSION_FILE" ]; then
     CURRENT_VERSION="1.1.0"
     echo "$CURRENT_VERSION" > "$VERSION_FILE"
-    echo "📌 Khởi tạo phiên bản đầu tiên: $CURRENT_VERSION"
+    echo "📌 Khởi tạo phiên bản mới nhất: $CURRENT_VERSION"
 else
     CURRENT_VERSION=$(cat "$VERSION_FILE")
     echo "📌 Phiên bản hiện tại: $CURRENT_VERSION"
     
-    # Tự động tăng patch version (Ví dụ: 1.1.0 -> 1.1.1)
+    # Tự động tăng patch version lên 1 đơn vị
     IFS='.' read -r major minor patch <<< "$CURRENT_VERSION"
     patch=$((patch + 1))
     NEW_VERSION="$major.$minor.$patch"
     
+    # Ghi đè hoàn toàn vào file (file cũ tự động bị thay thế bằng version mới nhất)
     echo "$NEW_VERSION" > "$VERSION_FILE"
     CURRENT_VERSION="$NEW_VERSION"
-    echo "✨ Đã nâng phiên bản mới lên: $CURRENT_VERSION"
+    echo "✨ Đã cập nhật phiên bản mới nhất: $CURRENT_VERSION (Đã xóa bỏ thông tin phiên bản cũ)"
 fi
 
-# 3. Sinh file metadata version.json để app có thể check update
+# 3. Tạo file metadata version.json mới nhất (ghi đè file cũ)
 JSON_OUTPUT="version.json"
 cat <<EOF > "$JSON_OUTPUT"
 {
@@ -47,18 +42,17 @@ cat <<EOF > "$JSON_OUTPUT"
   "target_url": "$PAGES_URL"
 }
 EOF
-echo "📄 Đã tự sinh tệp cấu hình: $JSON_OUTPUT"
+echo "📄 Đã tạo tệp cấu hình JSON mới nhất: $JSON_OUTPUT"
 
-# 4. Tiến hành Git Automation (Commit & Push lên GitHub)
-echo "📦 Đang đồng bộ mã nguồn lên GitHub (Thanhtvsys/carplay)..."
+# 4. Tiến hành Git Automation: Commit và Push bản mới nhất lên GitHub
+echo "📦 Đang đồng bộ phiên bản mới nhất lên GitHub (Thanhtvsys/carplay)..."
 
 git add .
-git commit -m "Auto-build: Release version $CURRENT_VERSION for CarPlay Kova3D"
+git commit -m "Auto-build: Release latest version $CURRENT_VERSION for CarPlay Kova3D"
 
-# Đẩy lên nhánh main (nếu báo lỗi branch, script sẽ tự chuyển sang master)
 git branch -M main
 git push -u origin main
 
-echo "✅ Hoàn tất! Phiên bản v$CURRENT_VERSION đã được đẩy lên GitHub thành công."
+echo "✅ Hoàn tất! Chỉ có phiên bản mới nhất v$CURRENT_VERSION được lưu trữ và đẩy lên GitHub thành công."
 echo "🌐 GitHub Repository: https://github.com/Thanhtvsys/carplay"
 echo "🌐 GitHub Pages: $PAGES_URL"
