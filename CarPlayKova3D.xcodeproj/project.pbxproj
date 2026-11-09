@@ -270,7 +270,6 @@
 				INFOPLIST_FILE = CarPlayKova3D/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Ứng dụng cần theo dõi vị trí liên tục khi dẫn đường và hiển thị tốc độ.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ứng dụng cần truy cập vị trí để hiển thị tốc độ di chuyển trên bong bóng HUD.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -311,7 +310,6 @@
 				INFOPLIST_FILE = CarPlayKova3D/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Ứng dụng cần theo dõi vị trí liên tục khi dẫn đường và hiển thị tốc độ.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ứng dụng cần truy cập vị trí để hiển thị tốc độ di chuyển trên bong bóng HUD.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
