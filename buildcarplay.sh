@@ -26,7 +26,7 @@ else
     patch=$((patch + 1))
     NEW_VERSION="$major.$minor.$patch"
     
-    # Ghi đè hoàn toàn vào file (file cũ tự động bị thay thế bằng version mới nhất)
+    # Ghi đè hoàn toàn vào file
     echo "$NEW_VERSION" > "$VERSION_FILE"
     CURRENT_VERSION="$NEW_VERSION"
     echo "✨ Đã cập nhật phiên bản mới nhất: $CURRENT_VERSION (Đã xóa bỏ thông tin phiên bản cũ)"
@@ -44,14 +44,16 @@ cat <<EOF > "$JSON_OUTPUT"
 EOF
 echo "📄 Đã tạo tệp cấu hình JSON mới nhất: $JSON_OUTPUT"
 
-# 4. Tiến hành Git Automation: Commit và Push bản mới nhất lên GitHub
+# 4. Tiến hành Git Automation: Commit và ép đẩy bản mới nhất lên GitHub (Không lo lỗi xung đột)
 echo "📦 Đang đồng bộ phiên bản mới nhất lên GitHub (Thanhtvsys/carplay)..."
 
 git add .
 git commit -m "Auto-build: Release latest version $CURRENT_VERSION for CarPlay Kova3D"
-
 git branch -M main
-git push -u origin main
+
+# Thêm lệnh pull và force push để luôn ưu tiên bản mới nhất
+git pull origin main --allow-unrelated-histories --no-edit 2>/dev/null
+git push -u origin main --force
 
 echo "✅ Hoàn tất! Chỉ có phiên bản mới nhất v$CURRENT_VERSION được lưu trữ và đẩy lên GitHub thành công."
 echo "🌐 GitHub Repository: https://github.com/Thanhtvsys/carplay"
