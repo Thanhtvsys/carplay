@@ -1,13 +1,13 @@
 Package: com.thanhtvsys.carplaykova3d
-Version: 1.0.8
+Version: 1.0.10
 Architecture: iphoneos-arm
 Maintainer: Thanhtvsys
 Depends: mobilesubstrate, firmware (>= 14.0)
-Filename: debs/CarPlayKova3D_AllInOne.deb
-Size: 31104
-MD5sum: dd70ef24584dbe4cda3b40e68b08b040
-SHA1: eedba9daefc666d71df17231ba99a67c61b25c2a
-SHA256: 1d946b2653a481f43ebfaad2cf37d20d0360f183473bd2edaff2bae08c2f6cad
+Filename: debs/CarPlayKova3D_1.0.10_iphoneos-arm.deb
+Size: 31192
+MD5sum: 88cc529c516adf5e6e01a139ec30750b
+SHA1: 344cda98f0dea979d355c252c33d8b9259859163
+SHA256: 8e11db58e1eafe13a3bb3328aca52383d9f37874dc573edaab490dc52addf282
 Section: Applications
 Description: Ứng dụng CarPlay tích hợp Web Dashboard và Tweak Hook.
 Author: Thanhtvsys
@@ -25,66 +25,6 @@ SHA1: 6afd1aac35c7e2a39bc117561db2f81835448f11
 SHA256: 47971f559e76c41081de096d003343249d6b4ba730ccae034fb498def4856bec
 Section: Applications
 Description: Ứng dụng CarPlay tích hợp Web Dashboard và Tweak Hook.
-Author: Thanhtvsys
-Name: CarPlayKova3D
-
-Package: com.thanhtvsys.carplaykova3d
-Version: 1.1.0
-Architecture: iphoneos-arm
-Maintainer: Thanhtvsys <thanhtvsys@gmail.com>
-Depends: mobilesubstrate, firmware (>= 14.0)
-Filename: debs/CarPlayKova3D_1.1.0_iphoneos-arm.deb
-Size: 32580
-MD5sum: 64ae767edf131972e5d1ab79b051875f
-SHA1: 672640f76243f07ce30b4118161426873fad8fdc
-SHA256: e84d0e88e3569dc1ea5ccdc5a0c251e120d260e1063debc19959a64417873eff
-Section: Applications
-Description: Tích hợp Apple CarPlay cho CarPlayKova3D.
-Author: Thanhtvsys
-Name: CarPlayKova3D
-
-Package: com.thanhtvsys.carplaykova3d
-Version: 1.1.1
-Architecture: iphoneos-arm
-Maintainer: Thanhtvsys <thanhtvsys@gmail.com>
-Depends: mobilesubstrate, firmware (>= 14.0)
-Filename: debs/CarPlayKova3D_1.1.1_iphoneos-arm.deb
-Size: 32344
-MD5sum: 1c0689cc170ec7dab4b17d46b02f5550
-SHA1: d3baac440dd067ee8de1e143693a1c418856266e
-SHA256: 1f10563c8fff2af4d39f33551525b84ee84e65f798cfe4e3cd711a34fb68afb0
-Section: Applications
-Description: Tích hợp Apple CarPlay cho CarPlayKova3D.
-Author: Thanhtvsys
-Name: CarPlayKova3D
-
-Package: com.thanhtvsys.carplaykova3d
-Version: 1.1.2
-Architecture: iphoneos-arm
-Maintainer: Thanhtvsys <thanhtvsys@gmail.com>
-Depends: mobilesubstrate, firmware (>= 14.0)
-Filename: debs/CarPlayKova3D_1.1.2_iphoneos-arm.deb
-Size: 26836
-MD5sum: 35a8020d9939aef148aa439ee8c53a8f
-SHA1: 05fea7de2b495dcd21668623cee8853a6e57d8e3
-SHA256: 08a6ac65d02c3f3f0aa8745e3b9dc276cb95ba1bb94b9b40f0539e5a08442b0a
-Section: Applications
-Description: Tích hợp Apple CarPlay cho CarPlayKova3D.
-Author: Thanhtvsys
-Name: CarPlayKova3D
-
-Package: com.thanhtvsys.carplaykova3d
-Version: 1.1.3
-Architecture: iphoneos-arm
-Maintainer: Thanhtvsys <thanhtvsys@gmail.com>
-Depends: mobilesubstrate, firmware (>= 14.0)
-Filename: debs/CarPlayKova3D_1.1.3_iphoneos-arm.deb
-Size: 30360
-MD5sum: 81a0989014e4b2e0f9a037d08caee239
-SHA1: 9743aa687d7d27527f179bbe05c2e03bebe3915b
-SHA256: 0b2b5059d814dccfd93a9a2ff593715a62a22d08489401b5494a3253963ee709
-Section: Applications
-Description: Tích hợp Apple CarPlay cho CarPlayKova3D.
 Author: Thanhtvsys
 Name: CarPlayKova3D
 
