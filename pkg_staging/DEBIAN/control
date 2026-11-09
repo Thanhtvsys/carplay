@@ -1,6 +1,6 @@
 Package: com.thanhtvsys.carplaykova3d
 Name: CarPlayKova3D
-Version: 1.0.7
+Version: 1.0.8
 Architecture: iphoneos-arm
 Description: Ứng dụng CarPlay tích hợp Web Dashboard và Tweak Hook.
 Maintainer: Thanhtvsys

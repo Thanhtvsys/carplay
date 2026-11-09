@@ -10,7 +10,7 @@ mkdir -p pkg_staging/DEBIAN
 if [ -f "$CONTROL_FILE" ]; then
     CURRENT_VERSION=$(grep "Version:" "$CONTROL_FILE" | awk '{print $2}')
 else
-    CURRENT_VERSION="1.0.6"
+    CURRENT_VERSION="1.1.6"
 fi
 
 MAJOR_MINOR=$(echo "$CURRENT_VERSION" | awk -F. '{print $1"."$2}')

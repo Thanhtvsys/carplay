@@ -1,13 +1,13 @@
 Package: com.thanhtvsys.carplaykova3d
-Version: 1.0.7
+Version: 1.0.8
 Architecture: iphoneos-arm
 Maintainer: Thanhtvsys
 Depends: mobilesubstrate, firmware (>= 14.0)
 Filename: debs/CarPlayKova3D_AllInOne.deb
-Size: 31108
-MD5sum: 14665557f960c74d21e5d607507c58e8
-SHA1: ce32c70a2010033ae0ebf43b1280b9873be09384
-SHA256: ffbc26656545a1ee860fd1faf1097d1990de56d9c3e715ad98f7f57fa1f3418f
+Size: 31104
+MD5sum: dd70ef24584dbe4cda3b40e68b08b040
+SHA1: eedba9daefc666d71df17231ba99a67c61b25c2a
+SHA256: 1d946b2653a481f43ebfaad2cf37d20d0360f183473bd2edaff2bae08c2f6cad
 Section: Applications
 Description: Ứng dụng CarPlay tích hợp Web Dashboard và Tweak Hook.
 Author: Thanhtvsys
