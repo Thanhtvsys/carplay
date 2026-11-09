@@ -348,7 +348,6 @@ extern "C" {
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
-@import WebKit;
 #endif
 
 #endif // defined(__OBJC__)
@@ -384,7 +383,7 @@ SWIFT_CLASS("_TtC13CarPlayKova3D11AppDelegate")
 @class NSBundle;
 @class NSCoder;
 SWIFT_CLASS("_TtC13CarPlayKova3D23MainSplitViewController")
-@interface MainSplitViewController : UIViewController <WKNavigationDelegate>
+@interface MainSplitViewController : UIViewController
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
