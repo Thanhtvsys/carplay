@@ -10,7 +10,7 @@ mkdir -p pkg_staging/DEBIAN
 if [ -f "$CONTROL_FILE" ]; then
     CURRENT_VERSION=$(grep "Version:" "$CONTROL_FILE" | awk '{print $2}')
 else
-    CURRENT_VERSION="1.1.6"
+    CURRENT_VERSION="1.1.3"
 fi
 
 MAJOR_MINOR=$(echo "$CURRENT_VERSION" | awk -F. '{print $1"."$2}')
@@ -62,7 +62,7 @@ echo "🔐 Đang ký số ldid..."
 ldid -S $PKG_DIR/Applications/CarPlayKova3D.app/CarPlayKova3D
 ldid -S $PKG_DIR/Library/MobileSubstrate/DynamicLibraries/CarPlayHook.dylib
 
-cat <<EOF > $PKG_DIR/DEBIAN/control
+cat <<EOF > $CONTROL_FILE
 Package: com.thanhtvsys.carplaykova3d
 Name: CarPlayKova3D
 Version: $AUTO_VERSION
@@ -74,10 +74,11 @@ Section: Applications
 Depends: mobilesubstrate, firmware (>= 14.0)
 EOF
 
-# --- BƯỚC 7: ĐÓNG GÓI .DEB VÀ TẠO INDEX CHO SILEO ---
+# --- BƯỚC 7: ĐÓNG GÓI .DEB THEO VERSION VÀ TẠO INDEX CHO SILEO ---
 mkdir -p debs
-dpkg-deb -b $PKG_DIR CarPlayKova3D_AllInOne.deb
-mv CarPlayKova3D_AllInOne.deb debs/
+DEB_NAME="CarPlayKova3D_${AUTO_VERSION}_iphoneos-arm.deb"
+dpkg-deb -b $PKG_DIR "$DEB_NAME"
+mv "$DEB_NAME" debs/
 
 echo "📦 Đang tạo Index Packages cho kho lưu trữ Sileo..."
 dpkg-scanpackages -m debs /dev/null > Packages
@@ -87,7 +88,7 @@ gzip -k -f Packages
 # --- BƯỚC 8: TỰ ĐỘNG ĐẨY LÊN GITHUB ---
 echo "📤 Đang đồng bộ và đẩy toàn bộ mã nguồn lên GitHub..."
 git add -A
-git commit -m "Auto-build: Update CarPlayKova3D app, CarPlayHook source code and all-in-one deb packages (v$AUTO_VERSION)" || echo "Không có thay đổi mới."
+git commit -m "Auto-build: Update CarPlayKova3D app, CarPlayHook source code and deb v$AUTO_VERSION" || echo "Không có thay đổi mới."
 git push origin main
 
 echo "🎉 Hoàn tất toàn bộ quy trình thành công xuất sắc!"
