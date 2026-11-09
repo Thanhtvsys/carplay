@@ -1,13 +1,13 @@
 Package: com.thanhtvsys.carplaykova3d
-Version: 1.1.2
+Version: 1.1.3
 Architecture: iphoneos-arm
 Maintainer: Thanhtvsys <thanhtvsys@gmail.com>
 Depends: mobilesubstrate, firmware (>= 14.0)
-Filename: debs/CarPlayKova3D_1.1.2_iphoneos-arm.deb
-Size: 26836
-MD5sum: 35a8020d9939aef148aa439ee8c53a8f
-SHA1: 05fea7de2b495dcd21668623cee8853a6e57d8e3
-SHA256: 08a6ac65d02c3f3f0aa8745e3b9dc276cb95ba1bb94b9b40f0539e5a08442b0a
+Filename: debs/CarPlayKova3D_1.1.3_iphoneos-arm.deb
+Size: 30360
+MD5sum: 81a0989014e4b2e0f9a037d08caee239
+SHA1: 9743aa687d7d27527f179bbe05c2e03bebe3915b
+SHA256: 0b2b5059d814dccfd93a9a2ff593715a62a22d08489401b5494a3253963ee709
 Section: Applications
 Description: Tích hợp Apple CarPlay cho CarPlayKova3D.
 Author: Thanhtvsys
