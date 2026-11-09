@@ -1,0 +1,36 @@
+{
+  "" : {
+    "const-values" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary.swiftconstvalues",
+    "dependencies" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary.d",
+    "diagnostics" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary.dia",
+    "emit-module-dependencies" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary-emit-module.dia",
+    "pch" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary.swiftdeps"
+  },
+  "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/CarPlayKova3D/AppDelegate.swift" : {
+    "index-unit-output-path" : "/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/AppDelegate.o",
+    "llvm-bc" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/AppDelegate.bc",
+    "object" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/AppDelegate.o"
+  },
+  "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/CarPlayKova3D/ContentView.swift" : {
+    "index-unit-output-path" : "/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/CarPlayKova3D/MainSplitViewController.swift" : {
+    "index-unit-output-path" : "/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/MainSplitViewController.o",
+    "llvm-bc" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/MainSplitViewController.bc",
+    "object" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/MainSplitViewController.o"
+  },
+  "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/CarPlayKova3D/SpeedHUDManager.swift" : {
+    "index-unit-output-path" : "/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/SpeedHUDManager.o",
+    "llvm-bc" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/SpeedHUDManager.bc",
+    "object" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/SpeedHUDManager.o"
+  },
+  "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  }
+}

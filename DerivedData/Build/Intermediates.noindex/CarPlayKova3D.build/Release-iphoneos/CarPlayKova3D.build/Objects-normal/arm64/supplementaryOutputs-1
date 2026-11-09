@@ -1,0 +1,12 @@
+{
+  "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/CarPlayKova3D/AppDelegate.swift" : {
+    "abi-baseline-json" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D.abi.json",
+    "const-values" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary.swiftconstvalues",
+    "dependencies" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary.d",
+    "diagnostics" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-primary.dia",
+    "objc-header" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D-Swift.h",
+    "swiftdoc" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D.swiftdoc",
+    "swiftmodule" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D.swiftmodule",
+    "swiftsourceinfo" : "/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/DerivedData/Build/Intermediates.noindex/CarPlayKova3D.build/Release-iphoneos/CarPlayKova3D.build/Objects-normal/arm64/CarPlayKova3D.swiftsourceinfo"
+  }
+}
