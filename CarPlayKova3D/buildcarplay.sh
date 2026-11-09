@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Cố định thư mục làm việc chính xác trên máy của bạn
-PROJECT_DIR="/Users/thanhtran/Desktop/Carplay/CarPlayKova3D"
+# Cố định thư mục làm việc chính xác theo đường dẫn của bạn
+PROJECT_DIR="/Users/thanhtran/Desktop/Carplay/CarPlayKova3D/CarPlayKova3D"
 cd "$PROJECT_DIR" || { echo "❌ Không tìm thấy thư mục dự án tại $PROJECT_DIR"; exit 1; }
 
 # Cấu hình dự án và đường dẫn GitHub repository
