@@ -1,11 +1,16 @@
 #!/bin/bash
 
+# Cố định thư mục làm việc chính xác trên máy của bạn
+PROJECT_DIR="/Users/thanhtran/Desktop/Carplay/CarPlayKova3D"
+cd "$PROJECT_DIR" || { echo "❌ Không tìm thấy thư mục dự án tại $PROJECT_DIR"; exit 1; }
+
 # Cấu hình dự án và đường dẫn GitHub repository
 VERSION_FILE="version.txt"
 PROJECT_NAME="CarPlayKova3D"
 GITHUB_REPO_URL="https://github.com/Thanhtvsys/carplay.git"
 PAGES_URL="https://thanhtvsys.github.io/carplay/"
 
+echo "🚀 Đang chạy tại thư mục: $(pwd)"
 echo "🚀 Bắt đầu quy trình tự động Build, cập nhật phiên bản mới nhất và dọn dẹp file cũ..."
 
 # 1. Dọn dẹp triệt để các tệp tạm, cache hoặc bản build cũ nếu có
@@ -51,7 +56,7 @@ git add .
 git commit -m "Auto-build: Release latest version $CURRENT_VERSION for CarPlay Kova3D"
 git branch -M main
 
-# Thêm lệnh pull và force push để luôn ưu tiên bản mới nhất
+# Tự động pull và force push để ưu tiên phiên bản mới nhất
 git pull origin main --allow-unrelated-histories --no-edit 2>/dev/null
 git push -u origin main --force
 
