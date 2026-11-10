@@ -57,9 +57,18 @@ echo "✅ Tìm thấy dylib tại: $DYLIB_PATH"
 cp "$DYLIB_PATH" $PKG_DIR/Library/MobileSubstrate/DynamicLibraries/
 cp CarPlayHook/CarPlayHook.plist $PKG_DIR/Library/MobileSubstrate/DynamicLibraries/
 
-# --- BƯỚC 6: KÝ SỐ LDID VÀ TẠO CONTROL ---
-echo "🔐 Đang ký số ldid..."
-ldid -S $PKG_DIR/Applications/CarPlayKova3D.app/CarPlayKova3D
+# --- BƯỚC 6: KÝ SỐ LDID (KÈM ENTITLEMENTS) VÀ TẠO CONTROL ---
+echo "🔐 Đang ký số ldid kèm tệp Entitlements cho ứng dụng..."
+ENTITLEMENTS_PATH="CarPlayKova3D/CarPlayKova3D.entitlements"
+
+if [ -f "$ENTITLEMENTS_PATH" ]; then
+    ldid -S"$ENTITLEMENTS_PATH" $PKG_DIR/Applications/CarPlayKova3D.app/CarPlayKova3D
+    echo "Đã gán Entitlements thành công cho ứng dụng CarPlay!"
+else
+    echo "❌ Lỗi: Không tìm thấy file entitlements tại $ENTITLEMENTS_PATH"
+    exit 1
+fi
+
 ldid -S $PKG_DIR/Library/MobileSubstrate/DynamicLibraries/CarPlayHook.dylib
 
 cat <<EOF > $CONTROL_FILE
@@ -88,7 +97,7 @@ gzip -k -f Packages
 # --- BƯỚC 8: TỰ ĐỘNG ĐẨY LÊN GITHUB ---
 echo "📤 Đang đồng bộ và đẩy toàn bộ mã nguồn lên GitHub..."
 git add -A
-git commit -m "Auto-build: Update CarPlayKova3D app, CarPlayHook source code and deb v$AUTO_VERSION" || echo "Không có thay đổi mới."
+git commit -m "Auto-build: Update CarPlayKova3D app with Entitlements, CarPlayHook and deb v$AUTO_VERSION" || echo "Không có thay đổi mới."
 git push origin main
 
 echo "🎉 Hoàn tất toàn bộ quy trình thành công xuất sắc!"

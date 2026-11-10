@@ -48,7 +48,7 @@
 			<key>uniqueIdentifier</key>
 			<string>0014AE65-3A7A-48B3-A369-50B77D7EFD5D</string>
 		</dict>
-		<key>A79BC422-864A-4428-8549-0079489B5C4C</key>
+		<key>1FAF765E-AA5A-4322-9191-5FB25120B987</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -57,7 +57,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>A79BC422-864A-4428-8549-0079489B5C4C.xcactivitylog</string>
+			<string>1FAF765E-AA5A-4322-9191-5FB25120B987.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -82,13 +82,13 @@
 			<key>signature</key>
 			<string>Building project CarPlayKova3D with scheme CarPlayKova3D and configuration Release</string>
 			<key>timeStartedRecording</key>
-			<real>815906496.32676101</real>
+			<real>815977646.77174997</real>
 			<key>timeStoppedRecording</key>
-			<real>815906504.25416303</real>
+			<real>815977649.29936194</real>
 			<key>title</key>
 			<string>Building project CarPlayKova3D with scheme CarPlayKova3D and configuration Release</string>
 			<key>uniqueIdentifier</key>
-			<string>A79BC422-864A-4428-8549-0079489B5C4C</string>
+			<string>1FAF765E-AA5A-4322-9191-5FB25120B987</string>
 		</dict>
 	</dict>
 </dict>
