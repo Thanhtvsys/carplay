@@ -57,13 +57,21 @@ echo "✅ Tìm thấy dylib tại: $DYLIB_PATH"
 cp "$DYLIB_PATH" $PKG_DIR/Library/MobileSubstrate/DynamicLibraries/
 cp CarPlayHook/CarPlayHook.plist $PKG_DIR/Library/MobileSubstrate/DynamicLibraries/
 
-# --- BƯỚC 6: KÝ SỐ LDID (KÈM ENTITLEMENTS) VÀ TẠO CONTROL ---
-echo "🔐 Đang ký số ldid kèm tệp Entitlements cho ứng dụng..."
+# --- BƯỚC 6: XÓA CHỮ KÝ CŨ VÀ KÝ SỐ LDID (KÈM ENTITLEMENTS) CHUẨN XÁC ---
+echo "🔐 Đang làm sạch và ký số ldid kèm tệp Entitlements cho ứng dụng..."
 ENTITLEMENTS_PATH="CarPlayKova3D/CarPlayKova3D.entitlements"
+APP_BINARY="$PKG_DIR/Applications/CarPlayKova3D.app/CarPlayKova3D"
 
 if [ -f "$ENTITLEMENTS_PATH" ]; then
-    ldid -S"$ENTITLEMENTS_PATH" $PKG_DIR/Applications/CarPlayKova3D.app/CarPlayKova3D
-    echo "Đã gán Entitlements thành công cho ứng dụng CarPlay!"
+    # Xóa thư mục _CodeSignature cũ bên trong .app (nếu có do xcodebuild sinh ra)
+    rm -rf "$PKG_DIR/Applications/CarPlayKova3D.app/_CodeSignature"
+    
+    # Gán entitlements trực tiếp vào binary
+    ldid -S"$ENTITLEMENTS_PATH" "$APP_BINARY"
+    
+    # Kiểm tra xác thực quyền đã nhận chưa
+    codesign -d --entitlements :- "$APP_BINARY" || true
+    echo "Đã gán và ép Entitlements thành công cho ứng dụng CarPlay!"
 else
     echo "❌ Lỗi: Không tìm thấy file entitlements tại $ENTITLEMENTS_PATH"
     exit 1
@@ -97,7 +105,7 @@ gzip -k -f Packages
 # --- BƯỚC 8: TỰ ĐỘNG ĐẨY LÊN GITHUB ---
 echo "📤 Đang đồng bộ và đẩy toàn bộ mã nguồn lên GitHub..."
 git add -A
-git commit -m "Auto-build: Update CarPlayKova3D app with Entitlements, CarPlayHook and deb v$AUTO_VERSION" || echo "Không có thay đổi mới."
+git commit -m "Auto-build: Update CarPlayKova3D app with clean Entitlements, CarPlayHook and deb v$AUTO_VERSION" || echo "Không có thay đổi mới."
 git push origin main
 
 echo "🎉 Hoàn tất toàn bộ quy trình thành công xuất sắc!"
