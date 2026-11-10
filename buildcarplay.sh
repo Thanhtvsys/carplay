@@ -36,15 +36,20 @@ make clean
 make package
 cd ..
 
-# --- BƯỚC 4: CHUẨN BỊ CẤU TRÚC STAGING CHO GÓI .DEB ---
+# --- BƯỚC 4: CHUẨN BỊ CẤU TRÚC STAGING SẠCH CHO GÓI .DEB ---
 PKG_DIR="pkg_staging"
 rm -rf $PKG_DIR
 mkdir -p $PKG_DIR/Applications
 mkdir -p $PKG_DIR/Library/MobileSubstrate/DynamicLibraries
 mkdir -p $PKG_DIR/DEBIAN
 
-# Copy App sau khi build vào thư mục Applications
+# Chỉ sao chép đúng file .app từ kết quả build Xcode
 cp -R build_output/Build/Products/Release-iphoneos/CarPlayKova3D.app $PKG_DIR/Applications/
+
+# Dọn dẹp sạch các tệp index rác nếu vô tình lọt vào thư mục .app
+rm -f $PKG_DIR/Applications/CarPlayKova3D.app/Packages*
+rm -f $PKG_DIR/Applications/CarPlayKova3D.app/Release*
+rm -rf $PKG_DIR/Applications/CarPlayKova3D.app/_CodeSignature
 
 # --- BƯỚC 5: TỰ ĐỘNG TÌM VÀ COPY FILE DYLIB CỦA TWEAK ---
 DYLIB_PATH=$(find CarPlayHook/.theos/obj -name "CarPlayHook.dylib" | head -n 1)
@@ -57,21 +62,14 @@ echo "✅ Tìm thấy dylib tại: $DYLIB_PATH"
 cp "$DYLIB_PATH" $PKG_DIR/Library/MobileSubstrate/DynamicLibraries/
 cp CarPlayHook/CarPlayHook.plist $PKG_DIR/Library/MobileSubstrate/DynamicLibraries/
 
-# --- BƯỚC 6: XÓA CHỮ KÝ CŨ VÀ KÝ SỐ LDID (KÈM ENTITLEMENTS) CHUẨN XÁC ---
-echo "🔐 Đang làm sạch và ký số ldid kèm tệp Entitlements cho ứng dụng..."
+# --- BƯỚC 6: KÝ SỐ LDID VÀ GÁN ENTITLEMENTS CHUẨN XÁC ---
+echo "🔐 Đang ký số ldid kèm tệp Entitlements cho ứng dụng..."
 ENTITLEMENTS_PATH="CarPlayKova3D/CarPlayKova3D.entitlements"
 APP_BINARY="$PKG_DIR/Applications/CarPlayKova3D.app/CarPlayKova3D"
 
 if [ -f "$ENTITLEMENTS_PATH" ]; then
-    # Xóa thư mục _CodeSignature cũ bên trong .app (nếu có do xcodebuild sinh ra)
-    rm -rf "$PKG_DIR/Applications/CarPlayKova3D.app/_CodeSignature"
-    
-    # Gán entitlements trực tiếp vào binary
     ldid -S"$ENTITLEMENTS_PATH" "$APP_BINARY"
-    
-    # Kiểm tra xác thực quyền đã nhận chưa
-    codesign -d --entitlements :- "$APP_BINARY" || true
-    echo "Đã gán và ép Entitlements thành công cho ứng dụng CarPlay!"
+    echo "Đã gán Entitlements thành công cho ứng dụng CarPlay!"
 else
     echo "❌ Lỗi: Không tìm thấy file entitlements tại $ENTITLEMENTS_PATH"
     exit 1
@@ -91,13 +89,13 @@ Section: Applications
 Depends: mobilesubstrate, firmware (>= 14.0)
 EOF
 
-# --- BƯỚC 7: ĐÓNG GÓI .DEB THEO VERSION VÀ TẠO INDEX CHO SILEO ---
+# --- BƯỚC 7: ĐÓNG GÓI .DEB VÀ TẠO KHO LƯU TRỮ RA THƯ MỤC NGOÀI ---
 mkdir -p debs
 DEB_NAME="CarPlayKova3D_${AUTO_VERSION}_iphoneos-arm.deb"
 dpkg-deb -b $PKG_DIR "$DEB_NAME"
 mv "$DEB_NAME" debs/
 
-echo "📦 Đang tạo Index Packages cho kho lưu trữ Sileo..."
+echo "📦 Đang tạo Index Packages cho kho lưu trữ Sileo (ở thư mục gốc)..."
 dpkg-scanpackages -m debs /dev/null > Packages
 bzip2 -k -f Packages
 gzip -k -f Packages
@@ -105,7 +103,7 @@ gzip -k -f Packages
 # --- BƯỚC 8: TỰ ĐỘNG ĐẨY LÊN GITHUB ---
 echo "📤 Đang đồng bộ và đẩy toàn bộ mã nguồn lên GitHub..."
 git add -A
-git commit -m "Auto-build: Update CarPlayKova3D app with clean Entitlements, CarPlayHook and deb v$AUTO_VERSION" || echo "Không có thay đổi mới."
+git commit -m "Auto-build: Clean app bundle, update CarPlayKova3D with Entitlements and deb v$AUTO_VERSION" || echo "Không có thay đổi mới."
 git push origin main
 
-echo "🎉 Hoàn tất toàn bộ quy trình thành công xuất sắc!"
+echo "🎉 Hoàn tất toàn bộ quy trình build sạch thành công xuất sắc!"
